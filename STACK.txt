@@ -1,0 +1,211 @@
+DATA STRUCTURES
+
+#data structure definition-- 1)structured data(name,etc..) 2)un-stuctured data(images,audio,video,etc..)
+# 2 types of data structure: 1)linear 2)non linear
+#structured data in linear ds,unsrtucted data in non linear ds
+#stack principle: Last in First out (LIFO)
+STACK-->
+pgm:
+class stack:
+    def __init__(self):
+        self.arr=[]
+    def stack_push(self,value):
+        self.arr.append(value)
+    def stack_pop(self):
+        self.arr.pop()
+    def printstack(self):
+        print(self.arr)
+s=stack()
+s.stack_push(10)
+s.stack_push(20)
+s.stack_push(30)
+s.stack_push(50)
+s.stack_push(40)
+print(s.arr)
+
+0/p: [10, 20, 30, 50, 40]
+
+pgm2:
+class Stack:
+        arr=[]
+        size=5
+        def push(self,element):
+            self.arr.append(element)
+        def stack_pop(self):
+            self.arr.pop()
+        def peek(self):
+            return self.arr[-1]
+        def isEmpty(self):
+            if len(self.arr)==0:
+                return True
+            else:
+                return False
+
+            
+s=Stack()
+s.push(10)
+s.push(20)
+s.push(30)
+s.push(40)
+print(s.arr)
+s.stack_pop()
+s.stack_pop()
+print(s.arr)
+print(s.peek())
+
+o/p:
+
+[10, 20, 30, 40]
+[10, 20]
+20
+​
+
+pgm:2
+
+ class Stack:
+        arr=[]
+        size=5
+        def push(self,element):
+            if len(self.arr)==self.size:
+                print("stack is full")
+            else:
+                self.arr.append(element)
+        def stack_pop(self):
+            if len(self.arr)==0:
+                print("underflow:stack empty")
+            else:
+                self.arr.pop()
+        def peek(self):
+            if len(self.arr)==0:
+                return "stack is empty"
+            else:
+                return self.arr[-1]
+        def isEmpty(self):
+            if len(self.arr)==0:
+                return True
+            else:
+                return False
+            
+s=Stack()
+s.push(10)
+s.push(20)
+s.push(30)
+s.push(40)
+s.push(50)
+s.push(60)
+s.push(70)
+s.push(90)
+s.push(100)
+s.push(132)
+
+print(s.arr)
+s.stack_pop()
+s.stack_pop()
+print(s.arr)
+print(s.peek())
+    
+
+o/p:
+stack is full
+stack is full
+stack is full
+stack is full
+stack is full
+[10, 20, 30, 40, 50]
+[10, 20, 30]
+30
+
+
+REversing of elemENts in a stack
+pgm:
+class Stack:
+        arr=[]
+        size=5
+        def push(self,element):
+            if len(self.arr)==self.size:
+                print("stack is full")
+            else:
+                self.arr.append(element)
+        def stack_pop(self):
+            if len(self.arr)==0:
+                print("underflow:stack empty")
+            else:
+                return self.arr.pop()
+s1=Stack()
+s1.push(10)
+s1.push(20)
+s1.push(30)
+s1.push(40)
+s1.push(50)
+print(s1.arr)
+s2=Stack()
+s2.push(s1.stack_pop())
+s2.push(s1.stack_pop())
+s2.push(s1.stack_pop())
+s2.push(s1.stack_pop())
+s2.push(s1.stack_pop())
+print(s2.arr)
+
+#reversing the first half of stack
+class stack():
+    arr=[]
+    
+    def push_stack(self,element):
+        self.arr.append(element)
+    def pop_stack(self):
+         return self.arr.pop()
+s1=stack()
+s1.push_stack(100)
+s1.push_stack(200)
+s1.push_stack(300)
+s1.push_stack(400)
+print(s1.arr)
+for i in range(len(s1.arr)//2):
+    s1.pop_stack()
+print(s.arr) 
+s2=stack()
+temp_arr=[]
+for i in range(len(s1.arr)):
+    temp_arr.append(s1.pop_stack())
+print(temp_arr)    
+
+
+stack:
+insertion and deletion can be done at one end only
+follows last in first out principle
+
+
+FUNCTIONALITY OF STACKS USING QUEUE
+
+PGM:
+class Queue:
+    def __init__(self):
+        self.temp = []
+        self.original = []
+
+    def enqueue(self, ele):
+        self.temp.append(ele)
+        while len(self.original) != 0:
+            pop_ele = self.original.pop(0)
+            self.temp.append(pop_ele)
+        while len(self.original) != 0:
+            pop_ele = self.original.pop(0)
+            self.original.append(pop_ele)
+
+    def dequeue(self):
+        return self.original.pop()
+
+    def printQueue(self):
+        print("Temp:", self.temp)
+        print("Original:", self.original)
+
+
+O/P:
+Process finished with exit code 0
+
+Reverse the first half of stack
+Reverse 2nd half of queue
+Peep and pole in queue
+PRIORITY QUEUE
+
+

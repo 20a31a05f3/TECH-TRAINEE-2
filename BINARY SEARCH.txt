@@ -1,0 +1,41 @@
+BINARY SEARCH
+
+PGM:
+arr=[i for i in range(1,11)]
+print(arr)
+key=3
+low=0
+high=len(arr)-1
+while low<=high:
+    mid=(low+high)//2
+    if arr[mid]==key:
+        print("found:",mid)
+        found=True
+        break
+    elif key < arr[mid]:
+        high=mid-1
+    elif key > arr[mid]:
+        low=mid+1
+
+o/p:
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+found: 2
+
+
+PGM2:
+
+def binary_search(arr,low,high,key):
+    while(low<=high):
+    mid=(low+high)//2
+    if arr[mid]==key:
+        print("key is found at ",mid)
+        found=True
+        return 
+    elif arr[mid]>key:
+        high=mid-1
+        return binary_search(arr,low,high,key)
+    elif:
+        low=mid+1
+        return binary_search(arr,low,high,key)
+    else:
+        print("not found")

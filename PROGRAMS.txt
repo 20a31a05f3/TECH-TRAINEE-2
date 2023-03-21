@@ -1,0 +1,45 @@
+PROGRAMS
+#GUESS THE NUMBER
+from random import randint
+number=randint(1,50)
+chance=5
+while chance!=0:
+    n=int(input("Guess:"))
+    if n==number:
+        print("you won!")
+        break
+    elif n<number:
+        print(n,"is smaller than the actual number")
+    elif n>number:
+        print(n,"is greater than actual number")
+    chance-=1
+print("number is",number)
+        
+o/p:
+Guess:35
+35 is greater than actual number
+Guess:22
+22 is smaller than the actual number
+Guess:30
+you won!
+number is 30
+
+BALANCING PARANTHESIS
+
+PGM-->
+stack=[]
+s=input("enter string: ")
+for i in s:
+    if i=="(":
+        stack.append(i)
+    elif i==")" and len(stack)!=0:
+        stack.pop()
+    else:
+        print("invalid string")
+if len(stack)==0:
+    print("valid string")
+else:
+    print("invalid string")
+O/P:
+enter string: (()(((
+invalid string

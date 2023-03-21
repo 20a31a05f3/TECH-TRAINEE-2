@@ -1,0 +1,85 @@
+SORTS,BFS
+
+SELECTION SORT-->
+
+def selection(arr):
+    for i in range(len(arr)):
+        min_ind=i
+        for  j in range(i+1,len(arr)):
+            min_ind=j
+        arr[i],arr[min_ind]=arr[min_ind],arr[i]
+        
+    return arr
+arr=[2,17,3,25,18,14,3,9]
+print(arr)
+print(selection(arr))
+O/P:
+[2, 17, 3, 25, 18, 14, 3, 9]
+[9, 2, 17, 3, 25, 18, 14, 3]
+
+INSERTION SORT:
+
+def insertion(arr):
+    for i in range(1,len(arr)):
+        j=i
+        while arr[j-1]>arr[j] and j>0:
+            arr[j-1],arr[j]=arr[j],arr[j-1]
+            j-=1
+    return arr
+arr=[5,2,4,1,7]
+print(insertion(arr))
+
+O/P:
+[1, 2, 4, 5, 7]
+
+QUICK SORT:
+
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot=arr[0]
+    left_arr=[i for i in arr[1:] if i<=pivot]
+    right_arr=[i for i in arr[1:] if i>pivot]
+    
+    return quick_sort(left_arr)+[pivot]+quick_sort(right_arr)
+arr=[30,40,10,20,50,25]
+res=quick_sort(arr)
+print(res)
+
+O/P:
+
+[10, 20, 25, 30, 40, 50]
+
+
+BREADTH FIRST SEARCH
+
+def BFS(graph,start):
+    q=[start]
+    visited=[]
+    while len(q)!=0:
+        ele=q.pop(0)
+        print(ele)
+        for i in graph[ele]:
+            if i not in visited:
+                q.append(i)
+                visited.append(i)
+                
+graph_elements={
+    'a':['b','c'],
+    'b':['a','d'],
+    'c':['a','d'],
+    'd':['e'],
+    'e':['d']
+}
+BFS(graph_elements,'c')
+
+
+O/P:
+
+c
+a
+d
+b
+c
+e

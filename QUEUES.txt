@@ -1,0 +1,65 @@
+QUEUES
+
+
+double ended
+insertion-->front end
+deletion-->back end
+follows first in first out principle
+
+pgm:
+class Queue:
+        arr=[]
+        size=5
+        def enqueue(self,element):
+            if len(self.arr)==self.size:
+                print("queue is full")
+            else:
+                self.arr.append(element)
+        def dequeue(self):
+            if len(self.arr)==0:
+                print("underflow:queue empty")
+            else:
+                self.arr.pop(0)
+s1=Queue()
+s1.enqueue(10)
+s1.enqueue(20)
+s1.enqueue(30)
+s1.enqueue(40)
+s1.enqueue(50)
+print(s1.arr)
+s1.dequeue()
+print(s1.arr)
+
+o/p:
+[10, 20, 30, 40, 50]
+[20, 30, 40, 50]
+
+
+
+#reversing the seconf half of queue
+class q():
+    arr=[]
+    temp_arr=[]
+    def enq(self,element):
+        self.arr.append(element)
+    def deq(self):
+        return self.arr.pop(0)
+a=q()
+a.enq(10)
+a.enq(20)
+a.enq(30)
+a.enq(40)
+print(a.arr)
+for i in range(len(a.arr)//2):
+    a.deq()
+print(a.arr)    
+class stack():
+    arr2=[]
+    def push_stack(self,element):
+        self.arr2.append(element)
+    def pop_stack(self):
+        return self.arr2.pop()
+s=stack()
+for i in range(len(a.arr)):
+    s.push_stack(a.deq())
+print(s.arr2)    
